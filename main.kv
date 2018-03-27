@@ -1,0 +1,23 @@
+<MyLayout>:
+    orientation:'vertical'
+    padding:(36,36)
+
+    Label:
+        text:'opencv demo'
+        halign:'left'
+        valign:'top'
+        size_hint:(1,None)
+        height:'48dp'
+    Camera2:
+        index:0
+        resolution:(640,480)
+        id:camera
+        play:True
+    Label:
+        id:label
+        halign:'left'
+        valign:'top'
+        size_hint:(1,None)
+        height:'48dp'
+    Label:
+
