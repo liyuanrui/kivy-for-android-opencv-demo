@@ -13,13 +13,15 @@ class MyLayout(BoxLayout):
 class MainApp(App):
     def build(self):
         return MyLayout()
+    def on_start(self):
+        Clock.schedule_once(self.detect,5)
+
     def detect(self,nap):
         image=self.root.ids.camera.image
         rows,cols=image.shape[:2]
         ctime=time.ctime()[11:19]
         self.root.ids.label.text='%s image rows:%d cols:%d'%(ctime,rows,cols)
-    def on_start(self):
-        Clock.schedule_interval(self.detect,1)
+        Clock.schedule_once(self.detect,1)
 
 if __name__ == '__main__':
     MainApp().run()
